@@ -1,0 +1,10 @@
+var allActions = ["AddBorder","AddExportFormat","AddFill","AddInnerShadow","AddShadow","AlignCenter","AlignJustified","AlignLayersBottom","AlignLayersCenter","AlignLayersLeft","AlignLayersMiddle","AlignLayersRight","AlignLayersTop","AlignLeft","AlignRight","ArtboardChanged","AutoExpandGroups","BackToInstance","BaseAlignLayers","BaseStyle","BooleanMenu","ClippingMask","ClippingMaskMode","CloseDocument","ClosePath","CollapseAllGroups","ConvertToOutlines","CreateSharedStyle","CreateSymbol","DetachSybolInstances","Difference","DistributeHorizontally","DistributeVertically","DocumentSaved","Edit","Export","ExportSlices","Flatten","FlattenSelection","FlipHorizontal","FlipVertical","Group","HideAllGridsAndLayouts","HideLayer","IgnoreClippingMask","ImageOriginalSize","InsertArrow","InsertArtboard","InsertImage","InsertLine","InsertMenu","InsertSharedText","InsertSlice","InsertSymbol","InsertTextLayer","InsertVector","Intersect","Join","LayersMoved","LockLayer","MakeGrid","MakeLowercase","MakeUppercase","MaskWithShape","Mirror","MoveBackward","MoveForward","MoveToBack","MoveToFront","NineSlice","OpenDocument","OvalShape","Pencil","PolygonShape","Print","Publish","RectangleShape","ReduceImageSize","RemoveUnusedStyles","ReplaceImage","ResetBoolean","ResetSharedStyle","ResizeArtboardToFit","RevealInLayerList","Rotate","RoundToPixel","RoundedRectangleShape","SaveAsTemplate","Scale","Scissors","SelectAllArtboards","SelectionChanged","Shape","ShowBorderOptions","ShowFillOptions","SmartRotate","SpiralShape","Split","StarShape","Subtract","SyncSharedStyle","TextChanged","TextOnPath","ToggleAlignmentGuides","ToggleArtboardShadow","ToggleBorder","ToggleFill","ToggleGrid","ToggleLayerHighlight","ToggleLayout","TogglePixelGrid","TogglePixelLines","TogglePresentationMode","ToggleRulers","ToggleSelection","ToolsMenu","Transform","TriangleShape","Underline","Ungroup","Union","ViewMenu","Zoom"];
+
+var global = (function(){ return this; })();
+
+allActions.forEach(function(actionName){
+	global[actionName + "_handler"] = function(context){
+		print(actionName + " was called");
+		print(context.actionContext);
+	};
+});
